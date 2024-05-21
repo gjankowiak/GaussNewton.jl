@@ -121,6 +121,7 @@ function optimize(fcn, x0::AbstractArray{T};
         stptol = stptol,
         MXBAD = MXBAD,
         ZCONSEC = ZCONSEC,
+        ZLOW = ZLOW,
         ZHIGH = ZHIGH,
         ZCP = ZCP,
         ZCPMAX = ZCPMAX,
@@ -162,6 +163,7 @@ function optimize!(fcn!, x0::AbstractArray{T}, r::AbstractArray{TR};
         stptol = stptol,
         MXBAD = MXBAD,
         ZCONSEC = ZCONSEC,
+        ZLOW = ZLOW,
         ZHIGH = ZHIGH,
         ZCP = ZCP,
         ZCPMAX = ZCPMAX,
@@ -342,7 +344,6 @@ function optimize!(fcn!, fcnDer!, x0::AbstractArray{T}, r::AbstractArray{TR};
     end
 
     nfcn = 0
-    nfcnDer = 0
     nrank1 = n
     hook = false
     take = false
